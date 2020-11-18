@@ -1,0 +1,41 @@
+.bgcolor{
+    background-color: #e4f9f5;
+}
+.button2{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.card2{
+    padding-bottom: 2rem;
+}
+.buttonsub{
+    width: 50rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.headings{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.footer{
+    margin-bottom: 0;
+    padding-bottom: 2rem;
+}
+.content{
+    font-family: 'Montserrat', sans-serif;
+}
+.customer{
+    padding-top: 1.5rem;
+}
+.transfer{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.cards{
+    background-color: #00587a;
+    color: white;
+}
+.image{
+    width: 1600px;
+    height: 522px;
+}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Customer Details{% endblock title %}
+
+{% block body %}
+<section class="content bgcolor customer">
+<h2 class="text-center"><strong>Customer Details</strong></h2>
+<form  action="/view" method="POST" >
+<table class="table table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Account No</th>
+      <th scope="col">Current Balance</th>
+      <th scope="col">Choose</th>
+    </tr>
+  </thead>
+  {% for details in cust_details %}
+  <tbody>
+    <tr>
+      <td>{{details.name}}</td>
+      <td>{{details.email}}</td>
+      <td>{{details.account_no}}</td>
+      <td>{{details.amount}}</td>
+      <td><button type="submit" name="submit" class="btn btn-success" value="{{details.name}}">TRANSACT</button></td>
+      {% csrf_token %}
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+</form>
+</section>
+{% endblock body %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Transaction
+{% endblock title %}
+
+{% block body %}
+<section class="content">
+<div class="card bg-dark text-dark">
+  <img src="static/images/photo.jfif" class="card-img" alt="...">
+  <div class="card-img-overlay text-center">
+    <h1><strong>WELCOME!</strong></h1>
+    <h1 class="card-title">{{cust_name.name}}</h1>
+    <h3 class="card-text">EMAIL ID- {{cust_name.email}}</h3>
+    <h3 class="card-text">ACCOUNT NO.- {{cust_name.account_no}}</h3>
+    <h3 class="card-text">IFSC CODE- {{cust_name.ifsc_code}}</h3>
+    <h3 class="card-text">CURRENT BALANCE- {{cust_name.amount}}</h3>
+  </div>
+</div>
+</section>
+
+<section class="transfer content">
+<div align="center">
+<form method="POST" action="/transaction">
+{% csrf_token %}
+<div class="form-group col-md-6">
+      <label><strong>Transfer To:</strong></label>
+      <select name="to" class="form-control">
+      {% for details in all_details %}
+        <option>{{details.name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+     <div class="form-group col-md-6">
+      <label><strong>Amount</strong></label>
+      <input type="number" class="form-control" name="amount2">
+    </div>
+    <button type="submit" name="submit" class="btn btn-success" value="{{cust_name.name}}">Transfer</button>
+</form>
+</div>
+</section>
+{% endblock body %}
